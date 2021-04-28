@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>com.danichvolk.plugins.advancedscreenshoter</id>
+    <name>Advanced Screenshoter</name>
+    <vendor url="https://vk.com/id236915192">Danila Valkovets</vendor>
+
+    <description><![CDATA[
+    This plugin allows you to take a screenshot of the whole editor in one click. It will save your active Editor as .png file.
+    The default hotkey is Ctrl+Alt+Shift+Q. You can change it in Settings > Keymap > Plugins > Advanced Screenshoter.
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
+        <applicationConfigurable parentId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
+                                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                                 displayName="Advanced Screenshoter"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="ScreenshotAction" class="ScreenshotAction" text="Saves Editor's Screenshot"
+                description="Takes screenshot of whole editor">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt Q"/>
+        </action>
+    </actions>
+</idea-plugin>

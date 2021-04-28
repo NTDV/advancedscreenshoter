@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Screenshoter.iml" filepath="$PROJECT_DIR$/.idea/modules/Screenshoter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Screenshoter.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Screenshoter.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Screenshoter.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Screenshoter.test.iml" />
+    </modules>
+  </component>
+</project>
