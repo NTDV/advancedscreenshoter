@@ -6,6 +6,7 @@
     <description><![CDATA[
     This plugin allows you to take a screenshot of the whole editor in one click. It will save your active Editor as .png file.
     The default hotkey is Ctrl+Alt+Shift+Q. You can change it in Settings > Keymap > Plugins > Advanced Screenshoter.
+    Some other preferences stored at Settings > Tools > Advanced Screenshoter.
     ]]></description>
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
