@@ -3,7 +3,7 @@ import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.editor.ex.EditorGutterComponentEx;
 import com.intellij.openapi.ui.Messages;
 import com.pulispace.mc.ui.panorama.util.BigBufferedImage;
-import org.intellij.sdk.settings.AppSettingsState;
+import org.intellij.sdk.settings.AdvancedScreenshoterSettingsState;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -28,8 +28,7 @@ public class EditorScreenshoter {
         int contentWidthScaled = (editor.getMaxWidthInRange(0, document.getTextLength()) + getRightPadding())
                 * getScale();
         int imageWidthScaled = gutterWidthScaled + contentWidthScaled;
-
-        int imageHeightScaled = Math.min(editor.getLineHeight() * document.getLineCount(), gutterComponent.getHeight())
+        int imageHeightScaled = Math.min(editor.getLineHeight() * document.getLineCount(), contentComponent.getHeight())
                 * getScale();
 
         if (imageWidthScaled * imageHeightScaled > getWhenOutOfMemoryPossible() &&
@@ -64,7 +63,6 @@ public class EditorScreenshoter {
 
         resultImageGraphics.dispose();
 
-
         return resultImage;
     }
 
@@ -80,7 +78,7 @@ public class EditorScreenshoter {
     }
 
     private static String getPath() {
-        AppSettingsState settings = AppSettingsState.getInstance();
+        AdvancedScreenshoterSettingsState settings = AdvancedScreenshoterSettingsState.getInstance();
         return settings.path +
                 String.format(namePattern,
                         DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")
@@ -89,17 +87,17 @@ public class EditorScreenshoter {
     }
 
     private static int getScale() {
-        AppSettingsState settings = AppSettingsState.getInstance();
+        AdvancedScreenshoterSettingsState settings = AdvancedScreenshoterSettingsState.getInstance();
         return settings.scale;
     }
 
     private static int getRightPadding() {
-        AppSettingsState settings = AppSettingsState.getInstance();
+        AdvancedScreenshoterSettingsState settings = AdvancedScreenshoterSettingsState.getInstance();
         return settings.rightPadding;
     }
 
     private static int getWhenOutOfMemoryPossible() {
-        AppSettingsState settings = AppSettingsState.getInstance();
+        AdvancedScreenshoterSettingsState settings = AdvancedScreenshoterSettingsState.getInstance();
         return settings.whenOutOfMemoryPossible;
     }
 }

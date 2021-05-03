@@ -14,9 +14,9 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
-        <applicationConfigurable parentId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
-                                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
+        <applicationService serviceImplementation="org.intellij.sdk.settings.AdvancedScreenshoterSettingsState"/>
+        <applicationConfigurable parentId="tools" instance="org.intellij.sdk.settings.AdvancedScreenshoterSettingsConfigurable"
+                                 id="org.intellij.sdk.settings.AdvancedScreenshoterSettingsConfigurable"
                                  displayName="Advanced Screenshoter"/>
     </extensions>
 
